@@ -1,13 +1,19 @@
 
 # react-native-device-rotation
 
+## TODOS:
+
+* write README
+* write iOS Sensor
+* method to check availability
+
 ## Getting started
 
-`$ npm install react-native-device-rotation --save`
+`yarn add react-native-device-rotation`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-device-rotation`
+`react-native link react-native-device-rotation`
 
 ### Manual installation
 
@@ -43,3 +49,5 @@ import RNDeviceRotation from 'react-native-device-rotation';
 RNDeviceRotation;
 ```
   
+## Credits
+* [react-native-sensor-manager](https://github.com/kprimice/react-native-sensor-manager)

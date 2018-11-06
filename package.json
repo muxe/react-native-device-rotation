@@ -10,7 +10,7 @@
   "keywords": [
     "react-native"
   ],
-  "author": "Max Dörfler (max.doerfler@gmail.com)",
+  "author": "Max Dörfler (https://github.com/muxe)",
   "license": "ISC",
   "peerDependencies": {
     "react-native": "^0.41.2"
