@@ -9,6 +9,7 @@ import com.facebook.react.bridge.Callback;
 public class RNDeviceRotationModule extends ReactContextBaseJavaModule {
 
   private final ReactApplicationContext reactContext;
+  private DeviceRotation deviceRotation;
 
   public RNDeviceRotationModule(ReactApplicationContext reactContext) {
     super(reactContext);
@@ -18,5 +19,20 @@ public class RNDeviceRotationModule extends ReactContextBaseJavaModule {
   @Override
   public String getName() {
     return "RNDeviceRotation";
+  }
+
+  @ReactMethod
+  public int start() {
+    if (deviceRotation == null) {
+      deviceRotation = new DeviceRotation(reactContext);
+    }
+    return (deviceRotation.start());
+  }
+
+  @ReactMethod
+  public void stop() {
+    if (deviceRotation != null) {
+      deviceRotation.stop();
+    }
   }
 }

@@ -1,8 +1,8 @@
 
 {
   "name": "react-native-device-rotation",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "A react-native module to get the device rotation (roll, pitch, azimuth)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,8 +10,8 @@
   "keywords": [
     "react-native"
   ],
-  "author": "",
-  "license": "",
+  "author": "Max Dörfler (max.doerfler@gmail.com)",
+  "license": "ISC",
   "peerDependencies": {
     "react-native": "^0.41.2"
   }
