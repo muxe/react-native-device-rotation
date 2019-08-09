@@ -1,11 +1,18 @@
 
-#if __has_include("RCTBridgeModule.h")
-#import "RCTBridgeModule.h"
-#else
-#import <React/RCTBridgeModule.h>
-#endif
+//#if __has_include("RCTBridgeModule.h")
+//#import "RCTBridgeModule.h"
+//#else
+//#import <React/RCTBridgeModule.h>
+//#endif
+//#import <React/RCTEventEmitter.h>
 
-@interface RNDeviceRotation : NSObject <RCTBridgeModule>
+#import <React/RCTBridgeModule.h>
+//#import <React/RCTEventEmitter.h>
+#import <CoreMotion/CoreMotion.h>
+
+@interface RNDeviceRotation : NSObject <RCTBridgeModule> {
+    CMMotionManager *_motionManager;
+}
 
 @end
   

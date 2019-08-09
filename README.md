@@ -51,3 +51,4 @@ RNDeviceRotation;
   
 ## Credits
 * [react-native-sensor-manager](https://github.com/kprimice/react-native-sensor-manager)
+* [RNDeviceAngles](https://github.com/cristianszwarc/RNDeviceAngles)
