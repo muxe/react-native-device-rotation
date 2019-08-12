@@ -1,6 +1,6 @@
 {
   "name": "react-native-device-rotation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A react-native module to get the device rotation/attitude (roll, pitch, azimuth)",
   "main": "index.js",
   "scripts": {
