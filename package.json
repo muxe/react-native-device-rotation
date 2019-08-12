@@ -1,7 +1,6 @@
-
 {
   "name": "react-native-device-rotation",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A react-native module to get the device rotation/attitude (roll, pitch, azimuth)",
   "main": "index.js",
   "scripts": {
@@ -13,8 +12,8 @@
   "author": "Max Dörfler (https://github.com/muxe)",
   "license": "ISC",
   "repository": {
-    "type" : "git",
-    "url" : "git@github.com:muxe/react-native-device-rotation.git"
+    "type": "git",
+    "url": "git@github.com:muxe/react-native-device-rotation.git"
   },
   "peerDependencies": {
     "react-native": "^0.41.2"
