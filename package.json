@@ -7,7 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "rotation",
+    "orientation",
+    "attitude",
+    "roll",
+    "pich",
+    "yaw",
+    "azimuth"
   ],
   "author": "Max Dörfler (https://github.com/muxe)",
   "license": "ISC",
