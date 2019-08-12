@@ -7,10 +7,10 @@
 //#import <React/RCTEventEmitter.h>
 
 #import <React/RCTBridgeModule.h>
-//#import <React/RCTEventEmitter.h>
+#import <React/RCTEventEmitter.h>
 #import <CoreMotion/CoreMotion.h>
 
-@interface RNDeviceRotation : NSObject <RCTBridgeModule> {
+@interface RNDeviceRotation : RCTEventEmitter <RCTBridgeModule> {
     CMMotionManager *_motionManager;
 }
 

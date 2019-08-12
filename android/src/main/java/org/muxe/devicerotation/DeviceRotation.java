@@ -17,8 +17,7 @@ public class DeviceRotation implements SensorEventListener {
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
     private Sensor mMagnetometer;
-    private int i = 0, n = 0;
-    private int isRegistered = 0;
+    private boolean isRegistered = false;
 
     private ReactContext mReactContext;
 
@@ -30,20 +29,20 @@ public class DeviceRotation implements SensorEventListener {
         mReactContext = reactContext;
     }
 
-    public int start() {
-        if (mAccelerometer != null && isRegistered == 0) {
+    public boolean start() {
+        if (mAccelerometer != null && isRegistered == false) {
             mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_UI);
             mSensorManager.registerListener(this, mMagnetometer, SensorManager.SENSOR_DELAY_UI);
-            isRegistered = 1;
-            return (1);
+            isRegistered = true;
+            return true;
         }
-        return (0);
+        return false;
     }
 
     public void stop() {
-        if (isRegistered == 1) {
+        if (isRegistered == true) {
             mSensorManager.unregisterListener(this);
-            isRegistered = 0;
+            isRegistered = false;
         }
     }
 

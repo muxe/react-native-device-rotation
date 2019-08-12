@@ -22,11 +22,11 @@ public class RNDeviceRotationModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public int start() {
+  public boolean start() {
     if (deviceRotation == null) {
       deviceRotation = new DeviceRotation(reactContext);
     }
-    return (deviceRotation.start());
+    return deviceRotation.start();
   }
 
   @ReactMethod
@@ -34,5 +34,10 @@ public class RNDeviceRotationModule extends ReactContextBaseJavaModule {
     if (deviceRotation != null) {
       deviceRotation.stop();
     }
+  }
+
+  @ReactMethod
+  public void setUpdateInterval(float interval) {
+    // does nothing on android atm
   }
 }

@@ -1,11 +1,13 @@
 
 # react-native-device-rotation
 
-## TODOS:
+Get updates about a phones attitude in three axis. Values are in degrees and are roll, pitch and azimuth.
+Works for android and iOS. From my testing the differences are: pitch degrees are flipped for android and iOS, north (azimuth = 0) is the top of the phone in android and the right og the phone in iOS.
 
-* write README
-* write iOS Sensor
-* method to check availability
+## TODOS:
+* it's an early version of the package, so theres room for improvements
+* make sure values are the same on ios and android
+* method to check availability of the sensors
 
 ## Getting started
 
@@ -45,10 +47,31 @@
 ```javascript
 import RNDeviceRotation from 'react-native-device-rotation';
 
-// TODO: What to do with the module?
-RNDeviceRotation;
+componentDidMount() {
+		// only does studd in iOS currently
+    RNDeviceRotation.setUpdateInterval(0.2)
+
+    const orientationEvent = new NativeEventEmitter(RNDeviceRotation)
+    this.subscription = orientationEvent.addListener('DeviceRotation', event => {
+      log('DeviceRotation', event)
+      this.setState({
+        roll: event.roll,
+        pitch: event.pitch,
+        azimuth: event.azimuth,
+      })
+    })
+    RNDeviceRotation.start()
+  }
+
+  componentWillUnmount() {
+    if (this.subscription) {
+      this.subscription.remove()
+    }
+    RNDeviceRotation.stop()
+  }
 ```
   
 ## Credits
+* I found some older libraries for either android or iOS. I was greatly influenced by these solutions:
 * [react-native-sensor-manager](https://github.com/kprimice/react-native-sensor-manager)
 * [RNDeviceAngles](https://github.com/cristianszwarc/RNDeviceAngles)
