@@ -1,13 +1,12 @@
-
 # react-native-device-rotation
 
 Get updates about a phones attitude in three axis. Values are in degrees and are roll, pitch and azimuth.
-Works for android and iOS. From my testing the differences are: pitch degrees are flipped for android and iOS, north (azimuth = 0) is the top of the phone in android and the right og the phone in iOS.
+Works for Android and iOS. From my testing the differences are: pitch degrees are flipped for Android and iOS, north (azimuth = 0) is the top of the phone in Android and the right of the phone in iOS.
 
-## TODOS:
-* it's an early version of the package, so theres room for improvements
-* make sure values are the same on ios and android
-* method to check availability of the sensors
+## TO-DOS:
+- [ ] It's an early version of the package, so theres room for improvements
+- [ ] Make sure values are the same on iOS and Android
+- [ ] Method to check availability of the sensors
 
 ## Getting started
 
@@ -48,30 +47,30 @@ Works for android and iOS. From my testing the differences are: pitch degrees ar
 import RNDeviceRotation from 'react-native-device-rotation';
 
 componentDidMount() {
-		// only does stuff in iOS currently
-		RNDeviceRotation.setUpdateInterval(0.2)
+  // only does stuff in iOS currently
+  RNDeviceRotation.setUpdateInterval(0.2)
 
-		const orientationEvent = new NativeEventEmitter(RNDeviceRotation)
-		this.subscription = orientationEvent.addListener('DeviceRotation', event => {
-			log('DeviceRotation', event)
-			this.setState({
-				roll: event.roll,
-				pitch: event.pitch,
-				azimuth: event.azimuth,
-			})
-		})
-		RNDeviceRotation.start()
-	}
+  const orientationEvent = new NativeEventEmitter(RNDeviceRotation)
+  this.subscription = orientationEvent.addListener('DeviceRotation', event => {
+    log('DeviceRotation', event)
+    this.setState({
+      roll: event.roll,
+      pitch: event.pitch,
+      azimuth: event.azimuth,
+    })
+  })
+  RNDeviceRotation.start()
+}
 
-	componentWillUnmount() {
-		if (this.subscription) {
-			this.subscription.remove()
-		}
-		RNDeviceRotation.stop()
-	}
+componentWillUnmount() {
+  if (this.subscription) {
+    this.subscription.remove()
+  }
+  RNDeviceRotation.stop()
+}
 ```
 	
 ## Credits
-* I found some older libraries for either android or iOS. I was greatly influenced by these solutions:
+I found some older libraries for either Android or iOS. I was greatly influenced by these solutions:
 * [react-native-sensor-manager](https://github.com/kprimice/react-native-sensor-manager)
 * [RNDeviceAngles](https://github.com/cristianszwarc/RNDeviceAngles)
