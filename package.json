@@ -23,6 +23,6 @@
     "url": "git@github.com:muxe/react-native-device-rotation.git"
   },
   "peerDependencies": {
-    "react-native": "^0.41.2"
+    "react-native": "^0.64.2"
   }
 }
